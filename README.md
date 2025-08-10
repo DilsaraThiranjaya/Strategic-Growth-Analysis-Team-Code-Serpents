@@ -3,8 +3,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-1.3+-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-orange)
-![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## 📌 Project Overview
 This project delivers data-driven strategic insights for **Unique Gifts Ltd.**, a UK-based e-commerce retailer, by analyzing 2 years of transactional data (2009-2011). The analysis covers:
