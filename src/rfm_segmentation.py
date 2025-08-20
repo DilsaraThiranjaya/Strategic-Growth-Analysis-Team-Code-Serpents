@@ -167,16 +167,16 @@ class RFMScorer:
         # Monetary → mean, min, max → On average how much they spend, and range.
         segment_summary = rfm_final.groupby('Segment').agg({
             'Customer ID': 'count',
-            'Recency': ['mean', 'min', 'max'],
-            'Frequency': ['mean', 'min', 'max'],
-            'Monetary': ['mean', 'min', 'max']
+            'Recency': ['mean', 'median'],
+            'Frequency': ['mean', 'median'],
+            'Monetary': ['mean', 'median', 'sum']
         }).round(2)
-        
+    
         # Flatten column names
         segment_summary.columns = [
             'Customer_Count',
             'Avg_Recency', 'Median_Recency',
-            'Avg_Frequency', 'Median_Frequency', 
+            'Avg_Frequency', 'Median_Frequency',
             'Avg_Monetary', 'Median_Monetary', 'Total_Revenue'
         ]
         
@@ -230,13 +230,6 @@ class RFMVisualizer:
         axes[1, 0].axvline(np.log10(rfm_data['Monetary'].mean()), color='red', linestyle='--', label=f'Mean: £{rfm_data["Monetary"].mean():.0f}')
         axes[1, 0].legend()
         
-        # Box plot for monetary values to show wholesaler hypothesis
-        axes[1, 1].boxplot(rfm_data['Monetary'], vert=True)
-        axes[1, 1].set_title('Monetary Values Box Plot\n(Investigating Wholesaler Hypothesis)')
-        axes[1, 1].set_ylabel('Total Spent (£)')
-        axes[1, 1].set_xticks([1])
-        axes[1, 1].set_xticklabels(['All Customers'])
-        
         plt.tight_layout()
         return fig
     
@@ -265,13 +258,6 @@ class RFMVisualizer:
         axes[1, 0].set_ylabel('Average Spent (£)')
         axes[1, 0].tick_params(axis='x', rotation=45)
         axes[1, 0].legend().remove()
-        
-        # Recency vs Frequency scatter plot
-        # This requires the original RFM data, so we'll create a placeholder
-        axes[1, 1].text(0.5, 0.5, 'RFM Scatter Plot\n(Requires original data)', 
-                        transform=axes[1, 1].transAxes, ha='center', va='center',
-                        fontsize=12, bbox=dict(boxstyle='round', facecolor='lightgray'))
-        axes[1, 1].set_title('Recency vs Frequency Analysis')
         
         plt.tight_layout()
         return fig
