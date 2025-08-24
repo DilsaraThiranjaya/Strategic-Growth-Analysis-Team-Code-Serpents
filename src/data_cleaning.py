@@ -1,14 +1,17 @@
 """
-Data Cleaning and Preprocessing Module
-=====================================
+Data Sanitation and Preprocessing
+=================================
 
-This module contains functions for cleaning and preprocessing the Online Retail II dataset.
-It handles missing values, duplicates, cancellations, and data type conversions.
+A comprehensive function-based system for cleaning, preprocessing, and preparing 
+raw e-commerce transaction data for advanced analytical modeling.
+
+Team: Code Serpents  
+Team Member: S. M. L.Lakshan jayawardhana
+Project: Strategic Growth Analysis for UK E-Commerce Retailer
+Phase: 1 - Data Sanitation and Preprocessing
 """
 
 import pandas as pd
-import numpy as np
-from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
