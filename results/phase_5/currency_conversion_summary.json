@@ -1,0 +1,47 @@
+{
+  "analysis_date": "2025-08-26 10:02:21",
+  "exchange_rate_date": "2025-08-26",
+  "base_currency": "GBP",
+  "target_currencies": [
+    "USD",
+    "EUR"
+  ],
+  "transactions_processed": 100,
+  "api_status": "success",
+  "exchange_rates": {
+    "USD": 1.25,
+    "EUR": 1.15
+  },
+  "summary_statistics": {
+    "GBP": {
+      "count": 100,
+      "mean": 6209.147,
+      "median": 3172.2799999999997,
+      "std": 18376.99486079687,
+      "min": 2328.48,
+      "max": 168469.6,
+      "total": 620914.7,
+      "symbol": "\u00a3"
+    },
+    "USD": {
+      "count": 100,
+      "mean": 7761.4338,
+      "median": 3965.35,
+      "std": 22971.24356446106,
+      "min": 2910.6,
+      "max": 210587.0,
+      "total": 776143.38,
+      "symbol": "$"
+    },
+    "EUR": {
+      "count": 100,
+      "mean": 7140.5190999999995,
+      "median": 3648.12,
+      "std": 21133.54408112775,
+      "min": 2677.75,
+      "max": 193740.04,
+      "total": 714051.9099999999,
+      "symbol": "\u20ac"
+    }
+  }
+}

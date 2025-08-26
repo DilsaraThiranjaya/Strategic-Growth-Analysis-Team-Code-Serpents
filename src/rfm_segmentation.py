@@ -215,7 +215,7 @@ def plot_segment_analysis(segment_summary: pd.DataFrame, figsize: Tuple[int, int
 def run_complete_analysis(data: pd.DataFrame):
     """Run the complete RFM analysis"""
 
-    print("🔄 Starting RFM Analysis...")
+    print("Starting RFM Analysis...")
 
     data = validate_data(data)
     rfm_data = calculate_rfm(data)
@@ -226,7 +226,7 @@ def run_complete_analysis(data: pd.DataFrame):
     rfm_final = assign_segment_labels(rfm_scored, segment_map)
     segment_summary = get_segment_summary(rfm_final)
 
-    print("✅ RFM Analysis Complete!")
+    print("RFM Analysis Complete!")
     return {
         'rfm_data': rfm_data,
         'rfm_scored': rfm_scored,
@@ -243,16 +243,16 @@ def generate_visualizations(rfm_final: pd.DataFrame, segment_summary: pd.DataFra
         
     figures = {}
         
-    print("📊 Creating RFM distribution plots...")
+    print("Creating RFM distribution plots...")
     figures['distributions'] = plot_rfm_distributions(rfm_final)
         
-    print("🎯 Creating segment analysis plots...")
+    print("Creating segment analysis plots...")
     figures['segments'] = plot_segment_analysis(segment_summary)
 
     return figures
 
 
-def export_results(rfm_final: pd.DataFrame, segment_summary: pd.DataFrame,
+def export_results_phase_3(rfm_final: pd.DataFrame, segment_summary: pd.DataFrame,
                    filepath: str = "../results/phase_3/rfm_analysis_results.xlsx",
                    export_charts: bool = True, chart_dir: str = "../figures/rfm_charts"):
     """Export RFM analysis results and visualizations"""
@@ -264,10 +264,10 @@ def export_results(rfm_final: pd.DataFrame, segment_summary: pd.DataFrame,
         for name, fig in figures.items():
             fig.savefig(os.path.join(chart_dir, f"{name}.png"), dpi=300, bbox_inches="tight")
             plt.close(fig)
-            print(f"📁 Chart saved: {chart_dir}/{name}.png")
+            print(f"Chart saved: {chart_dir}/{name}.png")
     
     with pd.ExcelWriter(filepath, engine='openpyxl') as writer:
         rfm_final.to_excel(writer, sheet_name='RFM_Analysis', index=False)
         segment_summary.to_excel(writer, sheet_name='Segment_Summary')
     
-    print(f"✅ Results exported to {filepath}")
+    print(f"Results exported to {filepath}")
