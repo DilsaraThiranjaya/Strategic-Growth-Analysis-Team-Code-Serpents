@@ -157,7 +157,7 @@ pip install -r requirements.txt
 ### 3. Run Jupyter Notebook
 
 ```bash
-jupyter notebook notebooks/retail_analysis.ipynb
+notebooks/retail_analysis.ipynb
 ```
 
 ---
