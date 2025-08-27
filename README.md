@@ -93,6 +93,7 @@ Strategic-Growth-Analysis-Team-Code-Serpents/
 │
 ├── requirements.txt                  # Dependencies
 └── README.md                         # Project documentation (this file)
+```
 
 ---
 
