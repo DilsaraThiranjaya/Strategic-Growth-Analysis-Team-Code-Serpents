@@ -67,7 +67,7 @@ Strategic-Growth-Analysis-Team-Code-Serpents/
 │   └── online_retail_clean.csv       # Processed data (Post Phase 1)
 │
 ├── notebooks/
-│   └── retail_analysis_original.ipynb         # Main Jupyter Notebook
+│   └── retail_analysis.ipynb         # Main Jupyter Notebook
 │
 ├── report/
 │   └── Strategic_Insights_Report.pdf # Final business report
@@ -157,7 +157,7 @@ pip install -r requirements.txt
 ### 3. Run Jupyter Notebook
 
 ```bash
-notebooks/retail_analysis_original.ipynb
+notebooks/retail_analysis.ipynb
 ```
 
 ---
